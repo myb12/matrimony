@@ -33,4 +33,10 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'], function(){
     //----------division section route---------//
     Route::resource('/division','DivisionController');
 
+    //----------birth year section route---------//
+    Route::resource('/birth_year','BirthYearController');
+
+    //----------race section route---------//
+    Route::resource('/race','RaceController');
+
 });
