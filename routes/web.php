@@ -17,14 +17,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-//Admin section router
+//===========Admin section router===========//
 Route::group(['prefix'=>'admin','namespace'=>'admin'], function(){
     Route::resource('/dashboard','DashboardController');
 
-    //---------category section route---------//
+    //----------category section route---------//
     Route::resource('/category','CategoryController');
 
-    //---------marital status section route---------//
+    //----------marital status section route---------//
     Route::resource('/marital_status','MaritalStatusController');
+
+    //----------district section route---------//
+    Route::resource('/district','DistrictController');
+
+    //----------division section route---------//
+    Route::resource('/division','DivisionController');
 
 });
