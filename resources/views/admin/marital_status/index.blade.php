@@ -24,7 +24,7 @@
           <div class="card-header d-flex align-items-center ">
             <h3 class="card-title">Marital Status</h3>
             <a
-              href=""
+              href="{{route('marital_status.create')}}"
               class="btn btn-outline-dark ml-auto"
               ><i class="fas fa-plus"></i
             ></a>

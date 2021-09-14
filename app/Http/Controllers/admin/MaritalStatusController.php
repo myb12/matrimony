@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\MaritalStatus;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MaritalStatus\MaritalStatusStoreRequest;
+use App\Http\Requests\MaritalStatus\MaritalStatusUpdateRequest;
 
 class MaritalStatusController extends Controller
 {
@@ -40,6 +41,8 @@ class MaritalStatusController extends Controller
     {
         $maritalStatus->title = $request->title;
         $maritalStatus->save();
+
+        return redirect()->route('marital_status.index');
     }
 
     /**
@@ -72,9 +75,12 @@ class MaritalStatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MaritalStatusUpdateRequest $request, MaritalStatus $maritalStatus)
     {
-        //
+        $maritalStatus->title = $request->title;
+        $maritalStatus->save();
+
+        return redirect()->route('marital_status.index');
     }
 
     /**
@@ -83,8 +89,9 @@ class MaritalStatusController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(MaritalStatus $maritalStatus)
     {
-        //
+        $maritalStatus->delete();
+        return redirect()->route('marital_status.index');
     }
 }

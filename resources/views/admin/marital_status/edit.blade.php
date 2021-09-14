@@ -10,7 +10,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="">Marital Status</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('marital_status.index')}}">Marital Status</a></li>
                     <li class="breadcrumb-item active">Add Marital Status</li>
                 </ol>
             </div>
@@ -32,7 +32,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" action="" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{route('marital_status.update', $maritalStatus->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
