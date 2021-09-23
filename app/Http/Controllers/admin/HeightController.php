@@ -10,6 +10,10 @@ use App\Http\Requests\Height\HeightUpdateRequest;
 
 class HeightController extends Controller
 {
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

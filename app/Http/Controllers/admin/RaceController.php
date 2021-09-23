@@ -10,6 +10,10 @@ use App\Http\Requests\Race\RaceUpdateRequest;
 
 class RaceController extends Controller
 {
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

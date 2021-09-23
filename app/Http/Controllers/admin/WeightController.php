@@ -10,6 +10,11 @@ use App\Http\Requests\Weight\WeightUpdateRequest;
 
 class WeightController extends Controller
 {
+
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
