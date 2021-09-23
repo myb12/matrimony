@@ -39,4 +39,13 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'], function(){
     //----------race section route---------//
     Route::resource('/race','RaceController');
 
+    //----------height section route---------//
+    Route::resource('/height','HeightController');
+
+    //----------weight section route---------//
+    Route::resource('/weight','WeightController');
+
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -17,7 +17,7 @@ class BirthYearController extends Controller
      */
     public function index()
     {
-        $birthYears = BirthYear::all();
+        $birthYears = BirthYear::all()->sortByDesc('id');
         return view('admin.birth_year.index', compact('birthYears'));
     }
 

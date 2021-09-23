@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\District;
+use App\Models\Height;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\District\DistrictStoreRequest;
-use App\Http\Requests\District\DistrictUpdateRequest;
+use App\Http\Requests\Height\HeightStoreRequest;
+use App\Http\Requests\Height\HeightUpdateRequest;
 
-class DistrictController extends Controller
+class HeightController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $districts = District::all()->sortByDesc('id');
-        return view('admin.district.index', compact('districts'));
+        $heights = Height::all()->sortByDesc('id');
+        return view('admin.height.index', compact('heights'));
     }
 
     /**
@@ -28,7 +28,7 @@ class DistrictController extends Controller
      */
     public function create()
     {
-        return view('admin.district.create');
+        return view('admin.height.create');
     }
 
     /**
@@ -37,12 +37,11 @@ class DistrictController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DistrictStoreRequest $request, District $district)
+    public function store(HeightStoreRequest $request, Height $height)
     {
-        $district->title = $request->title;
-        $district->save();
-
-        return redirect()->route('district.index');
+        $height->title = $request->title;
+        $height->save();
+        return redirect()->route('height.index');
     }
 
     /**
@@ -64,8 +63,8 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
-        $district = District::find($id);
-        return view('admin.district.edit', compact('district'));
+        $height = Height::find($id);
+         return view('admin.height.edit', compact('height'));
     }
 
     /**
@@ -75,12 +74,11 @@ class DistrictController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(DistrictUpdateRequest $request, District $district)
+    public function update(HeightUpdateRequest $request, Height $height)
     {
-        
-        $district->title = $request->title;
-        $district->save();
-        return redirect()->route('district.index');
+        $height->title = $request->title;
+        $height->save();
+        return redirect()->route('height.index');
     }
 
     /**
@@ -89,9 +87,9 @@ class DistrictController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(District $district)
+    public function destroy(Height $height)
     {
-        $district->delete();
-        return redirect()->route('district.index');
+        $height->delete();
+        return redirect()->route('height.index');
     }
 }

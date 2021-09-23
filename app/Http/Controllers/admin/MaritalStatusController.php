@@ -17,7 +17,7 @@ class MaritalStatusController extends Controller
      */
     public function index()
     {
-        $maritalStatus = MaritalStatus::all();
+        $maritalStatus = MaritalStatus::all()->sortByDesc('id');
         return view('admin.marital_status.index', compact('maritalStatus'));
     }
 

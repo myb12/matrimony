@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\District;
+use App\Models\Weight;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\District\DistrictStoreRequest;
-use App\Http\Requests\District\DistrictUpdateRequest;
+use App\Http\Requests\Weight\WeightStoreRequest;
+use App\Http\Requests\Weight\WeightUpdateRequest;
 
-class DistrictController extends Controller
+class WeightController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $districts = District::all()->sortByDesc('id');
-        return view('admin.district.index', compact('districts'));
+        $weights = Weight::all()->sortByDesc('id');
+        return view('admin.weight.index', compact('weights'));
     }
 
     /**
@@ -28,7 +28,7 @@ class DistrictController extends Controller
      */
     public function create()
     {
-        return view('admin.district.create');
+        return view('admin.weight.create');
     }
 
     /**
@@ -37,12 +37,11 @@ class DistrictController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(DistrictStoreRequest $request, District $district)
+    public function store(WeightStoreRequest $request, Weight $weight)
     {
-        $district->title = $request->title;
-        $district->save();
-
-        return redirect()->route('district.index');
+        $weight->title = $request->title;
+        $weight->save();
+        return redirect()->route('weight.index');
     }
 
     /**
@@ -53,7 +52,7 @@ class DistrictController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -64,8 +63,8 @@ class DistrictController extends Controller
      */
     public function edit($id)
     {
-        $district = District::find($id);
-        return view('admin.district.edit', compact('district'));
+        $weight = Weight::find($id);
+        return view('admin.weight.edit', compact('weight'));
     }
 
     /**
@@ -75,12 +74,11 @@ class DistrictController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(DistrictUpdateRequest $request, District $district)
+    public function update(WeightUpdateRequest $request, Weight $weight)
     {
-        
-        $district->title = $request->title;
-        $district->save();
-        return redirect()->route('district.index');
+        $weight->title = $request->title;
+        $weight->save();
+        return redirect()->route('weight.index');
     }
 
     /**
@@ -89,9 +87,9 @@ class DistrictController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(District $district)
+    public function destroy(Weight $weight)
     {
-        $district->delete();
-        return redirect()->route('district.index');
+       $weight->delete();
+       return redirect()->route('weight.index');
     }
 }
