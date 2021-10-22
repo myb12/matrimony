@@ -46,6 +46,16 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'], function(){
     Route::resource('/weight','WeightController');
 
 });
+
+
+//===========Website section router===========//
+Route::group(['prefix'=>'site','namespace'=>'site'], function () {
+    Route::resource('/','HomeController');
+    Route::resource('/blogs','BlogController');
+    Route::resource('/faq','FaqController');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
