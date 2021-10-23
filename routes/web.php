@@ -58,6 +58,9 @@ Route::group(['prefix'=>'site','namespace'=>'site'], function () {
 
     Route::resource('/biodata','BiodataController');
 
+    Route::get('/address', 'RedirectController@redirectToAddress')->name('redirect_to_address');
+    Route::get('/education', 'RedirectController@redirectToEducation')->name('redirect_to_education');
+
     // Route::get('/user/{id}','BiodataController@show')->name('edit_user');
     // Route::post('/update_user','BiodataController@update')->name('update_user');
 });

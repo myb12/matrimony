@@ -24,7 +24,10 @@
     <div>
       <!-- Search From Start -->
       <div style="background-color: #f5f5f5; padding: 10px">
-        <form class="card container" style="
+        <form 
+        action="{{route('biodata.update',Auth::user()->id)}}"
+        method="post"
+        class="card container" style="
           width: 50vh;
           margin: 20px auto;
           text-align: center;
@@ -35,25 +38,28 @@
             0 12px 17px 2px rgba(0, 0, 0, 0.14),
             0 5px 22px 4px rgba(0, 0, 0, 0.12);
         ">
+            @csrf
+            @method('PUT')
           <div class="col-sm">
             <div class="form-group">
-              <label for="exampleInputEmail1">স্থায়ী ঠিকানা *</label>
-              <input type="email" class="form-control" id="floatingInput"
-                placeholder="গ্রাম/শহর, থানা, পোষ্ট অফিস, জেলা, বিভাগ">
+              <label for="permanent_address">স্থায়ী ঠিকানা *</label>
+              <input name="permanent_address" type="text" class="form-control" id="permanent_address"
+                placeholder="গ্রাম/শহর, থানা, পোষ্ট অফিস, জেলা, বিভাগ" value="{{$user->permanent_address}}">
             </div>
             <br />
             <div class="form-group">
-              <label for="exampleInputEmail1">বর্তমান ঠিকানা *</label>
-              <input type="email" class="form-control" id="floatingInput"
-                placeholder="গ্রাম/শহর, থানা, পোষ্ট অফিস, জেলা, বিভাগ">
+              <label for="present_address">বর্তমান ঠিকানা *</label>
+              <input  name="present_address" type="text" class="form-control" id="present_address"
+                placeholder="গ্রাম/শহর, থানা, পোষ্ট অফিস, জেলা, বিভাগ" value="{{$user->present_address}}">
             </div>
             <br />
-            <a href="./education.html"><button type="button" class="btn btn-info">save changes </button></a>
+            <button type="submit" class="btn btn-info">save changes </button>
 
         </form>
       </div>
     </div>
   </div>
+  
 @endsection
 
 @section('script')

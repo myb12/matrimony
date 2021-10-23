@@ -86,6 +86,10 @@ class BiodataController extends Controller
         $user->weight = $request->weight;
         $user->blood_group = $request->blood_group;
         $user->occupation = $request->occupation;
+        $user->permanent_address = $request->permanent_address;
+        $user->present_address = $request->present_address;
+        $user->highest_degree = $request->highest_degree;
+        $user->other_degree = $request->other_degree;
 
         $user->save();
         

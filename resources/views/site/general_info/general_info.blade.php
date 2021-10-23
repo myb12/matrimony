@@ -102,15 +102,15 @@
         <div class="form-group">
           <label for="exampleInputEmail1">রক্তের গ্রুপ *</label>
           <select name="blood_group" class="form-select" aria-label="Default select example">
-            <option value="1" selected>জানা নেই</option>
-            <option value="2" >(A+)</option>
-            <option value="3"> (A-)</option>
-            <option value="4">(B+)</option>
-            <option value="5">(B-)</option> 
-            <option value="6">(O+)</option>
-            <option value="7">(O-)</option>
-            <option value="8">(AB+)</option>
-            <option value="9">(AB-)</option>
+            <option value="জানা নেই" selected>জানা নেই</option>
+            <option value="A+" >(A+)</option>
+            <option value="A-"> (A-)</option>
+            <option value="B+">(B+)</option>
+            <option value="B-">(B-)</option> 
+            <option value="O+">(O+)</option>
+            <option value="O-">(O-)</option>
+            <option value="AB+">(AB+)</option>
+            <option value="AB-">(AB-)</option>
           </select>
         </div>
         </div>
