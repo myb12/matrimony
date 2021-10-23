@@ -53,6 +53,13 @@ Route::group(['prefix'=>'site','namespace'=>'site'], function () {
     Route::resource('/','HomeController');
     Route::resource('/blogs','BlogController');
     Route::resource('/faq','FaqController');
+    Route::resource('/name','NameController');
+    Route::resource('/general_info','GeneralInfoController');
+
+    Route::resource('/biodata','BiodataController');
+
+    // Route::get('/user/{id}','BiodataController@show')->name('edit_user');
+    // Route::post('/update_user','BiodataController@update')->name('update_user');
 });
 
 

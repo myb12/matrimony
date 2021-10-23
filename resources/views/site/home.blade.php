@@ -95,6 +95,7 @@
         </div>
         <br />
         <div style="text-align: right">
+        <a href="">
           <button
             type="button"
             class="btn btn-success"
@@ -102,6 +103,8 @@
           >
             বায়োডাটা খুঁজুন
           </button>
+        </a>
+
         </div>
       </div>
     </div>
@@ -114,7 +117,7 @@
           class="btn btn-info"
           style="padding: 20px; color: white; font-weight: bold; width: 300px"
         >
-          <a href="./otherPages/form/name.html">চলুন বায়োডাটা তৈরী করি</a>
+          <a href="{{route('name.index', Auth::user()->id)}}">চলুন বায়োডাটা তৈরী করি</a>
         </button>
       </div>
       <div style="padding: 20px">
